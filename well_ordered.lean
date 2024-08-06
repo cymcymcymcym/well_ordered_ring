@@ -1,4 +1,3 @@
-import Mathlib.Data.Set.Lattice
 import Mathlib.Data.Int.LeastGreatest
 open Classical
 
