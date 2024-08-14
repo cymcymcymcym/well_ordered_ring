@@ -111,9 +111,10 @@ def wellOrderedIntRing : WellOrderedRing Int := {
 
     have Hbdd : ∃ (b : ℤ), ∀ (z : ℤ), z ∈ S → b ≤ z := ⟨0, by
       intro z hz
-      have z_pos : z ∈ orderedIntRing.P := hP hz
+      have z_pos : z ∈ orderedIntRing.P := by
+        exact hP hz
       have zero_le_pos : ∀ z ∈ orderedIntRing.P, 0 ≤ z := by
-        intro z hzP
+        intro z' hzP
         simp [intP] at hzP
         exact Int.le_of_lt hzP
       exact zero_le_pos z z_pos
